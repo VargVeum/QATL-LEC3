@@ -17,7 +17,7 @@ public class AddCategoryToAdminTest extends BaseTest {
         catalogPage.clickCategoryButton();
         catalogPage.clickAddNewCategoryButton();
         catalogPage.addNewCategory();
-        // (!) Нужно добавить проверку на то, что после сохранения новой категории было показано сообщение об этом
+        catalogPage.checkSuccessMessage();
         catalogPage.searchCreatedCategory();
         catalogPage.waitForCategoryIsDisplayed();
         // logout

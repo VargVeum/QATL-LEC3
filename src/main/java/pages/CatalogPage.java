@@ -12,6 +12,12 @@ public class CatalogPage {
         this.driver = driver;
     }
 
+    public void checkSuccessMessage(){
+        WebElement successMessage = driver.findElement(By.className("alert alert-success"));
+        Assert.assertTrue(successMessage.isDisplayed(), "Сообщение об успешном создании продукта не появилось");
+        Assert.assertEquals(successMessage.getText(), "\n\t\t\tСоздано\n\t\t");
+    }
+
     public void searchCreatedCategory() {
         WebElement searchFieldByName = driver.findElement(By.cssSelector("input[name='categoryFilter_name']"));
         searchFieldByName.sendKeys("MartynenkoTestCategory");
