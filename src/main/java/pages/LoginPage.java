@@ -18,11 +18,6 @@ public class LoginPage{
         wait.until(ExpectedConditions.numberOfElementsToBe(locator, count));
     }
 
-
-    public void closeChromeDriver() {
-        driver.close();
-    }
-
     public void openAdminURL() {
         driver.get("http://prestashop-automation.qatestlab.com.ua/admin147ajyvk0/");
     }

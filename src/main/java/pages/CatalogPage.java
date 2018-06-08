@@ -12,20 +12,6 @@ public class CatalogPage {
         this.driver = driver;
     }
 
-//    public void addNewCategoryTest(){
-//
-//        clickCategoryButton();
-//        clickAddNewCategoryButton();
-//        addNewCategory();
-//        //boolean successMessage = driver.findElement(By.className("alert alert-success")).isDisplayed();
-//        searchCreatedCategory();
-//        waitForCategoryIsDisplayed();
-//
-//
-//
-//
-//    }
-
     public void searchCreatedCategory() {
         WebElement searchFieldByName = driver.findElement(By.cssSelector("input[name='categoryFilter_name']"));
         searchFieldByName.sendKeys("MartynenkoTestCategory");

@@ -49,6 +49,9 @@ public class BaseTest {
                 return new ChromeDriver();
         }
     }
+    public void closeChromeDriver() {
+        driver.close();
+    }
 
     enum BrowserType {CHROME, FIREFOX, IE, EDGE}
 }
