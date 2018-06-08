@@ -14,23 +14,11 @@ public class AddCategoryToAdminTest extends BaseTest {
         loginPage.enterPassword();
         loginPage.clickLoginButton();
         // add new category
-        catalogPage.checkDashboard();
-        catalogPage.checkCatalog();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        catalogPage.clickCategoryButton();
+        catalogPage.clickAddNewCategoryButton();
+        catalogPage.addNewCategory();
+        catalogPage.searchCreatedCategory();
+        catalogPage.waitForCategoryIsDisplayed();
         // logout
         loginPage.clickToHeaderMenu();
         loginPage.clickToLogoutButton();
@@ -38,9 +26,4 @@ public class AddCategoryToAdminTest extends BaseTest {
         loginPage.closeChromeDriver();
 
     }
-
-
-
-
-
 }
