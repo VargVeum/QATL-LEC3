@@ -14,10 +14,14 @@ public class AddCategoryToAdminTest extends BaseTest {
         loginPage.enterPassword();
         loginPage.clickLoginButton();
         // add new category
+        catalogPage.clickCatalogButton();
         catalogPage.clickCategoryButton();
         catalogPage.clickAddNewCategoryButton();
         catalogPage.addNewCategory();
         catalogPage.checkSuccessMessage();
+        catalogPage.refreshPage();
+        catalogPage.clickCatalogButton();
+        catalogPage.clickCategoryButton();
         catalogPage.searchCreatedCategory();
         catalogPage.waitForCategoryIsDisplayed();
         // logout

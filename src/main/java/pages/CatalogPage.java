@@ -13,9 +13,9 @@ public class CatalogPage {
     }
 
     public void checkSuccessMessage(){
-        WebElement successMessage = driver.findElement(By.className("alert alert-success"));
+        WebElement successMessage = driver.findElements(By.cssSelector("div.alert.alert-success")).get(0);
         Assert.assertTrue(successMessage.isDisplayed(), "Сообщение об успешном создании продукта не появилось");
-        Assert.assertEquals(successMessage.getText(), "\n\t\t\tСоздано\n\t\t");
+        Assert.assertEquals(successMessage.getText(), "×\nСоздано");
     }
 
     public void searchCreatedCategory() {
@@ -41,6 +41,17 @@ public class CatalogPage {
         WebElement categoryButton = driver.findElement(By.cssSelector("li[data-submenu='11']"));
         categoryButton.click();
     }
+
+    public void clickCatalogButton(){
+        WebElement catalogButton = driver.findElement(By.id("subtab-AdminCatalog"));
+        catalogButton.click();
+    }
+
+    public void refreshPage(){
+        driver.navigate().refresh();
+    }
+
+
 
     public void waitForCategoryIsDisplayed(){
         String categoryNameOnThePage = driver.findElement(By.cssSelector("tbody tr td:nth-child(3)")).getText();

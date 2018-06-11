@@ -4,7 +4,6 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
-
 import java.io.File;
 import java.util.concurrent.TimeUnit;
 
@@ -21,7 +20,7 @@ public class BaseTest {
         WebDriver driver = getDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        return new EventFiringWebDriver(getDriver());
+        return new EventFiringWebDriver(driver);
     }
 
     private WebDriver getDriver() {
@@ -45,6 +44,7 @@ public class BaseTest {
             default:
                 System.setProperty(
                         "webdriver.chrome.driver",
+                        //new File(BaseTest.class.getResource("/LinuxDrivers/chromedriver").getFile()).getPath());
                         new File(BaseTest.class.getResource("/WindowsDrivers/chromedriver.exe").getFile()).getPath());
                 return new ChromeDriver();
         }
